@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <style>
+        body {
+            margin: 0px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aqua;
+
+        }
+
+        .box {
+            padding: 20px;
+            /* background-color: wheat; */
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-shadow: 4px 4px black;
+        }
+
+        button{
+            margin:auto;
+            width: 60px;
+            font-size: small;
+           
+            background: local;
+            
+            border: 1px solid black;
+        }
+        button:active{
+            width: 50px;
+            font-size: xx-small;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div id="counter" class="counter">0</div>
+       
+            <button  id="plus">plus</button>
+            <button id="Minos">Minos</button>
+        
+    </div>
+
+</body>
+<script>
+    const counter = document.getElementById('counter');
+    const plus = document.getElementById('plus');
+    const Minos = document.getElementById('Minos');
+
+    plus.addEventListener('click',() => {
+        let number = parseInt(counter.innerText);
+        counter.innerText = number + 1 
+    });
+
+    Minos.addEventListener('click',() => {
+        let number = parseInt(counter.innerText);
+        counter.innerText = number - 1 
+    });
+
+</script>
+
+</html>

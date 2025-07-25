@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+    <style>
+        body {
+            margin: 0%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: aqua;
+            gap: 30px;
+
+        }
+
+        .main {
+            border: 1px solid black;
+            width: 200px;
+            padding: 10px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input {
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+
+        button {
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+
+        .listBox {
+            width: 200px;
+            
+            padding-inline: 10px;
+            border: 1px solid black;
+
+        }
+        h3{
+            /* padding: 0px; */
+            margin: 0px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <input type="text" placeholder="add task" id="Myinput">
+        <button id="button" type="submita">add</button>
+    </div>
+
+    <div  class="listBox">
+        <h3>Task List</h3>
+        <ol id="listBox">
+            <li>
+                hii
+            </li>
+        </ol>
+
+    </div>
+</body>
+
+<script>
+
+
+
+    const button = document.getElementById('button');
+
+    const listBox = document.getElementById('listBox');
+
+
+
+    button.addEventListener('click', () => {
+        const input = document.getElementById('Myinput');
+
+        let newli = document.createElement('li');
+        newli.innerText = input.value;
+        listBox.appendChild(newli);
+        input.value = "";
+
+    });
+
+
+
+</script>
+
+</html>

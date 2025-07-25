@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+    <style>
+        body {
+            margin: 0%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: aqua;
+        }
+
+        .formBox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            border: 1px solid black;
+            padding: 10px;
+            box-shadow: 4px 4px black;
+        }
+
+        input {
+            border-radius: 4px;
+        }
+
+        button {
+            background: local;
+            position: relative;
+            left: -60px;
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="formBox">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="username">
+        <input type="password" id="password" placeholder="password">
+        <button>submit</button>
+    </div>
+
+    <script>
+        const field = document.querySelectorAll('input');
+
+        const button = document.querySelector('button');
+
+        button.addEventListener('mouseenter', () => {
+            let size = (Math.random() * (60 - 50 + 1 )) + 50;
+          
+
+            field.forEach(field1 => {
+                
+                if (field1.value.trim() === "") {
+                    button.style.left = `${size}px`;
+                  
+                }
+
+            });
+        });
+
+        button.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+                button.style.left = "-60px";
+            }, 200);
+
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
