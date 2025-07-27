@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+    <style>
+        body {
+            margin: 0px;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+            background-color: aqua;
+            padding: 5px;
+            overflow-x: visible;
+        }
+
+        .navBar {
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: aliceblue;
+        }
+
+        .navIteams {
+            width: 200px;
+            display: flex;
+            margin-right: 10px;
+            justify-content: space-evenly;
+            align-items: flex-end;
+        }
+
+        .navIteam {
+            color: rgb(255, 106, 0);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .logo {
+            font-size: 30px;
+            padding: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .tabContent {
+            display: none;
+            position: absolute;
+            border: 1px solid black;
+            right: 5px;
+            width: 200px;
+            background-color: bisque;
+        }
+
+        #aboutSection {
+            right: 110px;
+        }
+
+        #productSection {
+            right: 50px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navBar">
+        <div class="logo">Logo</div>
+        <div class="navIteams">
+            <div class="navIteam"> About</div>
+            <div class="navIteam">Product</div>
+            <div class="navIteam">Contact</div>
+
+        </div>
+    </div>
+    <div id="aboutSection" class="tabContent">About content here</div>
+    <div id="productSection" class="tabContent">Product content here</div>
+    <div id="contactSection" class="tabContent">Contact content here</div>
+
+
+    <div class="mainbox"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maxime rerum modi ut
+        obcaecati iste adipisci
+        culpa? Officiis ipsa beatae magnam maxime, fugiat sed tenetur laboriosam optio, voluptas vero neque Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Perspiciatis molestiae doloremque suscipit dolores dicta. Pariatur
+        quidem ea assumenda consectetur? Culpa id exercitationem architecto quidem itaque minus fuga reiciendis hic
+        quis?
+        Ut, soluta aspernatur. Voluptate labore libero asperiores officia id nobis alias blanditiis excepturi ratione,
+        accusamus quaerat eos possimus sequi cupiditate perspiciatis deserunt unde omnis, sint, aliquam adipisci?
+        Repudiandae, debitis ipsum.</div>
+
+    <script>
+        let navIteam = document.getElementsByClassName('navIteam');
+        let tabContent = document.getElementsByClassName('tabContent');
+
+        for (let i = 0; i < navIteam.length; i++) {
+            navIteam[i].addEventListener('click', (e) => {
+
+                for (let j = 0; j < tabContent.length; j++) {
+                    tabContent[j].classList.add("hidden");
+
+                    tabContent[j].classList.remove("visible");
+                }
+
+                tabContent[i].classList.add("visible");
+
+                tabContent[i].classList.remove("hidden");
+                console.log("click");
+
+                setTimeout(() => {
+
+                    for (let j = 0; j < tabContent.length; j++) {
+                        tabContent[j].classList.add("hidden");
+
+                        tabContent[j].classList.remove("visible");
+                    }
+
+                }, 8000);
+
+
+            });
+
+            window.addEventListener('scroll', () => {
+
+                for (let j = 0; j < tabContent.length; j++) {
+                    tabContent[j].classList.add("hidden");
+
+                    tabContent[j].classList.remove("visible");
+                }
+
+            });
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
